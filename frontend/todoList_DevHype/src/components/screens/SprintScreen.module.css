@@ -1,0 +1,255 @@
+.backlog_container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Evita scroll innecesario */
+}
+
+/* Aside */
+.aside_container{
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    background-color: #E9E9E9;
+    
+}
+
+.backlog_btn{
+    margin: .8rem 0;
+    padding: .8rem 6rem;
+    background-color:#000AC0;
+    width: 100%;
+}
+
+.sprint_list{
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: .4rem;
+    border: 5px solid #373737;
+}
+
+.sprint_list_header{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: .8rem 0;
+    width: 80%;
+    border-bottom: 2px solid black;
+}
+
+.sprint_list_header h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.sprint_list_header button{
+    margin: .2rem;
+    background-color: #000AC0;
+}
+
+.sprint_card{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem 0;
+    color: #ffffff;
+    background: linear-gradient(45deg, #000AC0 0%, #000000 95%, #FFFFFF 10%);
+    box-shadow: 4px 4px 12px #000000;
+    border-radius: .25rem;
+    width: 84%;
+    margin: .6rem auto;
+    padding: .6rem 0;
+}
+
+.sprint_card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sprint_card:not(:hover) {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sprint_actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.sprint_actions button{
+    border:  1px solid white
+}
+
+/* Sprint Main */
+.sprint_container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border-left: 2px solid #DDDDDD;
+}
+
+.task_header{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem 0;
+}
+
+.task_header_actions{
+    margin-top: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.task_header_actions h3{
+    color: #000000;
+}
+
+.task_header_actions button{
+    align-self: center;
+}
+
+.task_sections {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-content: space-around;    
+}
+
+.task_column_pending, .task_column_in_progress, .task_column_completed{
+    min-width: 350px;
+    margin: 0 auto;
+    width: 96%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task_column_pending h3, .task_column_in_progress h3, .task_column_completed h3{
+    margin-top: .8rem;
+    color: #000000;
+}
+
+.task_column_pending{
+    background-color: #0099e030;
+}
+
+.task_column_in_progress{
+    background-color: #e0e00030;
+}
+
+.task_column_completed{
+    background-color: #00e02530;
+}
+
+.task_card_pending, .task_card_in_progress, .task_card_completed {
+    min-width: 350px;    
+    max-width: 400px;
+    width: 95%;
+    padding: .2rem;    
+    gap: .4rem;          
+    box-shadow: 3px 3px 8px #00000070;
+    border-radius: 0.5rem;
+}
+
+.task_card_red{
+    border: 3px solid #b60000;
+}
+
+.task_card_pending{
+    background-color: #ffffff;
+}
+
+.task_card_in_progress{
+    background-color: #e0e00050;
+}
+
+.task_card_completed{
+    background-color: #00e02550;
+}
+
+.task_card_legend{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.task_card_legend h4{
+    color: #000000;
+    font-weight: 300;
+}
+
+.task_card_legend b{
+    font-style: italic;
+    /* text-decoration: underline; */
+    font-weight: 700;
+}
+
+.task_actions {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: .1rem;
+    width: 100%;
+}
+
+.task_actions div{
+    padding: .1rem;
+    font-size: .8rem;
+}
+
+.task_actions_btn button,
+.task_actions_backlog button,
+.switch_state button {
+    font-size: 0.80rem;
+    padding: 0.4rem 0.4rem;
+    flex: 1;
+    max-width: 200px; 
+    margin: 1px;
+    white-space: nowrap;
+}
+
+
+
+/* Buttons */
+.task_actions_backlog button{
+    background-color: #308332;
+}
+
+.btn_add_task{
+    background-color: #000AC0;
+}
+
+.switch_state button{
+    background-color: rgb(199, 123, 0);
+}
+
+.btn_view{
+    background-color: #000AC0;
+}
+
+.btn_edit{
+    background-color: #000AC0;
+}
+
+.btn_delete{
+    background-color: #C00000;
+}

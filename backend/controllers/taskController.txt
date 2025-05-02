@@ -1,0 +1,96 @@
+// const taskModel = require('../models/taskModel');
+
+// const getTask = async(req, res, next)=>{
+//     try {
+//         const tasks = await taskModel.find();
+//         if (tasks.length === 0) {
+//             req.tasks = [];
+//         }else{
+//             req.tasks = tasks;
+//         }
+//     } catch (error) {
+//         req.error = error
+//     }
+//     next();
+// }
+
+// const postTask = async(req, res, next)=>{
+//     const {titulo, descripcion, estado, fechaLimite, color} = req?.body;
+//     try {
+//         if (!titulo || !estado || !fechaLimite) {
+//             throw new Error('Los campos titulo, estado y fecha son obligatorios');
+//         }
+//         const task = new taskModel({
+//             titulo,
+//             descripcion,
+//             estado,
+//             fechaLimite,
+//             color
+//         });
+//         const newTask = await taskModel.create(task);
+//         req.task = newTask;
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const getTaskById = async(req, res, next)=>{
+//     const { id } = req.params;
+//     try {
+//         const task = await taskModel.findById(id);
+//         if (!task) {
+//             req.task = {};
+//         }else{
+//             req.task = task;
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const putTask = async(req, res, next)=>{
+//     const { id } = req.params;
+//     const {titulo, descripcion, estado, fechaLimite, color} = req?.body;
+//     try {
+//         if (!titulo || !estado || !fechaLimite) {
+//             throw new Error ('Los campos titulo, estado y fecha son obligatorios');
+//         }
+//         const task = await taskModel.findById(id);
+//         if (!task) {
+//             req.task = {}
+//         }else{
+//             const updatedTask = {...task, titulo, descripcion, estado, fechaLimite, color};
+//             await taskModel.updateOne({ _id: id }, updatedTask);
+//             req.task = updatedTask;
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const deleteTask = async(req, res, next)=>{
+//     const { id } = req.params;
+//     try {
+//         const task = await taskModel.findById(id);
+//         if (!task) {
+//             req.status = {message: 'Tarea no encontrada'};
+//         }else{
+//             await taskModel.deleteOne({ _id: id });
+//             req.status = { message: 'Tarea eliminada correctamente' };
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// module.exports = {
+//     getTask,
+//     postTask,
+//     getTaskById,
+//     putTask,
+//     deleteTask
+// }

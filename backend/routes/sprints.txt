@@ -1,0 +1,49 @@
+// const express = require('express');
+
+// const { getSprint, postSprint, getSprintById, putSprint, deleteSprint, putTaskInSprint } = require('../controllers/sprintController');
+
+// const sprintRouter = express.Router();
+
+// sprintRouter.get('/', getSprint, async (req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.sprints);
+// });
+
+// sprintRouter.post('/', postSprint, async (req, res) => {
+//     if(req.error){
+//         return res.status(500).json({messaje:req.error.message})
+//     }
+//     return res.status(200).json(req.sprint)
+// });
+
+// sprintRouter.get('/:id', getSprintById, async (req, res) => {
+//     if (req.error){
+//         return res.status(500).json({messaje:req.error.message})
+//     }
+//     return res.status(200).json(req.sprint)
+// });
+
+// sprintRouter.put('/:id', putSprint, async (req, res) => {
+//     if (req.error){
+//         return res.status(500).json({messaje:req.error.message})
+//     }
+//     return res.status(200).json(req.sprint)
+// });
+
+// sprintRouter.delete('/:id', async (req, res) => {
+//     if (req.error){
+//         return res.status(500).json({messaje:req.error.message})
+//     }
+//     return res.status(200).json(req.status.message)
+// });
+
+// sprintRouter.put('/:id/add-task/:taskId', putTaskInSprint, async (req, res) => {
+//     if (req.error){
+//         return res.status(500).json({messaje:req.error.message})
+//     }
+//     return res.status(200).json(req.sprint)
+// });
+
+// module.exports = sprintRouter;

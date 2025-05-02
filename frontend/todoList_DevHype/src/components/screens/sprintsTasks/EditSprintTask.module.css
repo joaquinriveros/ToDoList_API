@@ -1,0 +1,101 @@
+.editSprintTask_modal_container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(110, 110, 110, 0.3);
+    backdrop-filter: blur(5px); /* Aplica el desenfoque */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.editSprintTask_form_container{
+    width: 40%;
+    height: 70%;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+    box-shadow: 1px 1px 8px black;
+    border-radius: .4rem;
+}
+
+.editSprintTask_form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem; 
+    padding: 1rem;
+}
+
+.editSprintTask_form div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.editSprintTask_form label{
+    color: black;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.editSprintTask_form input{
+    width: 50%;
+    height: 25%;
+    color: black;
+    background: linear-gradient(to bottom, #d4d4d4, #ffffff00);
+    border-radius: .2rem;
+    border: 1px solid black;
+    padding: .4rem;
+}
+
+.editSprintTask_form input[name="description"]{
+    height: 50%;
+}
+
+.editSprintTask_form button{
+    width: 25%;
+    background-color: #000AC0;
+}
+
+.editSprintTask_form button:hover{
+    animation: colorChange 1s normal
+}
+
+@keyframes colorChange {
+    0% { background-color: #000AC0; }
+    50% { background-color: #000ac0a0; }
+    100% { background-color: #000AC0; }
+}
+
+.error{
+    margin: .2rem 0;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn_close{
+    position: absolute;
+    /* top: 1rem; right: 1rem; => Ajusta la posición vertical y horizontal con 1rem de margen */
+    top: 1rem;
+    right: 1rem; 
+    background-color: red;
+}

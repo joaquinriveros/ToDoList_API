@@ -1,0 +1,124 @@
+// const sprintModel = require('../models/sprintModel');
+
+// const getSprint = async(req, res, next) => {
+//     try {
+//         const sprints = await sprintModel.find();
+//         if (sprints.length === 0) {
+//             req.sprints = [];
+//         }else{
+//             req.sprints = sprints;
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const postSprint = async(req, res, next) => {
+//     const {fechaInicio, fechaCierre, tareas, color} = req?.body;
+//     try {
+//         if (!fechaInicio || !fechaCierre) {
+//             throw new Error('Los campos fechaInicio y fechaCierre son obligatorios');
+//         }
+//         const sprint = new sprintModel({
+//             fechaInicio,
+//             fechaCierre,
+//             tareas,
+//             color
+//         });
+//         const newSprint = await sprintModel.create(sprint);
+//         req.sprint = newSprint;
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const getSprintById = async(req, res, next)=>{
+//     const { id } = req.params;
+//     try {
+//         const sprint = await sprintModel.findById(id);
+//         if (!sprint) {
+//             req.sprint = {}
+//         }else{
+//             req.sprint = sprint;
+//         }
+//     } catch (error) {
+//         req.error = error
+//     }
+//     next();
+// }
+
+// const putSprint = async(req, res, next)=>{
+//     const { id } = req.params;
+//     const {fechaInicio, fechaCierre, tareas, color} = req?.body;
+//     try {
+//         if (!fechaInicio || !fechaCierre) {
+//             throw new Error('Los campos fechaInicio y fechaCierre son obligatorios');
+//         }
+//         const sprint = await sprintModel.findById(id);
+//         if (!sprint) {
+//             req.sprint = {}
+//         }else{
+//             const updatedSprint = {...sprint, fechaInicio, fechaCierre, tareas, color};
+//             await sprintModel.updateOne({ _id: id }, updatedSprint);
+//             req.sprint = updatedSprint;
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const deleteSprint = async(req, res, next)=>{
+//     const { id } = req.params;
+//     try {
+//         const sprint = await sprintModel.findById(id);
+//         if (!sprint) {
+//             req.status = { message: 'Sprint no encontrado' };
+//         }else{
+//             await sprintModel.deleteOne({ _id: id });
+//             req.status = { message: 'Sprint eliminado correctamente' };
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// const putTaskInSprint = async(req, res, next)=>{
+//     const { id, taskId } = req.params;
+//     const {titulo, descripcion, estado, fechaLimite, color} = req?.body;
+//     try {
+//         const sprint = await sprintModel.findById(id);
+//         if (!sprint) {
+//            req.sprint = {};
+//         }
+//         const task = sprint.tareas.find(task => task._id.toString() === taskId);
+//         if (task) {
+//             if (!titulo || !estado || !fechaLimite) {
+//                 throw new Error('Los campos titulo, estado y fecha son obligatorios' );
+//             }
+//             const updatedSprint = {...sprint, tareas: sprint.tareas.map(task => task._id.toString() === taskId ? {...task, titulo, descripcion, estado, fechaLimite, color} : task)};
+//             await sprintModel.updateOne({ _id: id }, updatedSprint);
+//             req.sprint = updatedSprint;
+//         } else {
+//             const newTask = { _id: taskId, titulo, descripcion, estado, fechaLimite, color };
+//             const updatedSprint = {...sprint, tareas: [...sprint.tareas, newTask]};
+//             await sprintModel.updateOne({ _id: id }, updatedSprint);
+//             req.sprint = updatedSprint;
+//         }
+//     } catch (error) {
+//         req.error = error;
+//     }
+//     next();
+// }
+
+// module.exports = {
+//     getSprint,
+//     postSprint,
+//     getSprintById,
+//     putSprint,
+//     deleteSprint,
+//     putTaskInSprint
+// }

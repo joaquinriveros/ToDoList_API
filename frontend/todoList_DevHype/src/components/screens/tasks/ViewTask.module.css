@@ -1,0 +1,76 @@
+.viewTask_modal_container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: rgba(110, 110, 110, 0.3);
+    backdrop-filter: blur(5px); /* Aplica el desenfoque */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.viewTask_form_container{
+    width: 40%;
+    height: 70%;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+    box-shadow: 1px 1px 8px black;
+    border-radius: .4rem;
+}
+
+.viewTask_form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem; 
+    padding: 1rem;
+}
+
+.viewTask_form div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.viewTask_form label{
+    color: black;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.viewTask_form input{
+    width: 50%;
+    height: 25%;
+    color: black;
+    background: linear-gradient(to bottom, #d4d4d4, #ffffff00);
+    border-radius: .2rem;
+    border: 1px solid black;
+    padding: .4rem;
+}
+
+.viewTask_form input[name="description"]{
+    height: 50%;
+}
+
+/* Buttons */
+.btn_close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem; 
+    background-color: red;
+}

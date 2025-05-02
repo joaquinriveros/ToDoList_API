@@ -1,0 +1,43 @@
+// const express = require('express');
+
+// const {getTask, postTask, getTaskById, putTask, deleteTask} = require("../controllers/taskController")
+
+
+// const taskRouter = express.Router();
+
+// taskRouter.get('/', getTask, async(req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.tasks);
+// });
+
+// taskRouter.post('/', postTask, async (req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.task);
+// });
+
+// taskRouter.get('/:id', getTaskById, async (req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.task);
+// });
+
+// taskRouter.put('/:id', putTask, async (req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.task);
+// });
+
+// taskRouter.delete('/:id', deleteTask, async (req, res) => {
+//     if (req.error) {
+//         return res.status(500).json({ message: req.error.message });
+//     } 
+//     return res.status(200).json(req.status.message);
+// });
+
+// module.exports = taskRouter;
